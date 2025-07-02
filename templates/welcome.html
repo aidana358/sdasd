@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добро пожаловать</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        .welcome-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        a.button {
+            background-color: #ffffff;
+            color: #185a9d;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+
+    <script>
+        // Автоматический выход через 60 секунд (60000 мс)
+        setTimeout(function() {
+            alert("Срок действия сессии истёк. Выполняется выход...");
+            window.location.href = "/logout";
+        }, 60000);
+    </script>
+</head>
+<body>
+    <div class="welcome-box">
+        <h2>Добро пожаловать, {{ login }}!</h2>
+        <p>Вы успешно вошли в систему.</p>
+        <a href="/logout" class="button">Выйти</a>
+    </div>
+</body>
+</html>
